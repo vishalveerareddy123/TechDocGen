@@ -7,4 +7,4 @@ from main import app as application  # Import the 'app' instance from app.py and
 # Optional: Add any production-specific config here, like disabling debug mode
 application.debug = False
 # wsgi.py
-from main import app as application
+from main import app as app
