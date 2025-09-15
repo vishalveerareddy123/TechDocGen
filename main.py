@@ -31,6 +31,7 @@ def create_session_with_retries():
     return session
 
 @app.route('/upload-video', methods=['POST'])
+@cross_origin(origins=["http://localhost:3000"], methods=["POST", "OPTIONS"], allow_headers=["Content-Type", "Authorization"])
 def upload_video():
  
     if 'video' not in request.files:
