@@ -11,7 +11,13 @@ from requests.packages.urllib3.util.retry import Retry
 from flask_cors import CORS,cross_origin
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)  # Enable detailed logging
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+    max_age=600
+)
 # Load from environment variables (set these via export or .env)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
