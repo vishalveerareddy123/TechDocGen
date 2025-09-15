@@ -8,7 +8,7 @@ import json
 import logging
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)  # Enable detailed logging
 CORS(app)
